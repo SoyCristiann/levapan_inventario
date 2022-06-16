@@ -1,7 +1,3 @@
-<?php
-    
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +9,7 @@
 </head>
 <body>
     <header class="encabezado">
-        <h1><a href="../principal.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
+        <h1><a href="../../index.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
         <p>Sistema de gestión de inventario</p>
     </header>
 
