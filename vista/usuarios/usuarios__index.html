@@ -5,33 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="../estilo.css">
-    <title>Gestionar Productos Levapan</title>
+    <title>Gestionar Usuarios Levapan</title>
 </head>
 <body>
     <header class="encabezado">
-        <h1><a href="../../index.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
-        <p>Sistema de gestión de inventario</p>
+        <div class="container">
+            <h1><a href="../../index.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
+            <h1 class="titulo_principal">Sistema de gestión de inventario</h1>
+        </div>
     </header>
 
     <main>
         <div class="titulo_secundario">
-            <h2>Administrador De Productos</h2>
+            <h2>Administrador De Usuarios</h2>
         </div>
 
         <div class="acciones">
             <p>¿Qué quieres hacer?</p>
             <ul class="lista-items">
 
-                <a href="registrar_productos.php">
+                <a href="usuarios__registrar.php"><li class="items">
+                    <img src="../imagenes/iconos/consultar_clientes.svg"> 
+                    <p>Registrar nuevo usuario del sistema</p>
+                </li></a>
+
+                <a href="usuarios__consultar.php">
                     <li class="items">
-                    <img src="../imagenes/iconos/consultar_clientes.svg">
-                    <p>Registrar nuevo producto</p>
+                    <img src="../imagenes/iconos/registrar_clientes.svg">
+                    <p>Consultar o actualizar usuarios del sistema</p>
                 </li></a>           
 
-                <a href="editar_productos.php"><li class="items">
-                    <img src="../imagenes/iconos/registrar_clientes.svg">
-                    <p>Eliminar y/o editar un producto</p>
-                </li></a>
+                
                 
             </ul>
         </div>

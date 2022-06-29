@@ -17,8 +17,10 @@
 </head>
 <body>
     <header class="encabezado">
-        <h1><a href="../../index.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
-        <p>Sistema de gestión de inventario</p>
+        <div class="container">
+            <h1><a href="../../index.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
+            <h1 class="titulo_principal">Sistema de gestión de inventario</h1>
+        </div>
     </header>
 
     <main>

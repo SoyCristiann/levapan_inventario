@@ -20,11 +20,11 @@
 
     $resultado = $objConexion -> query($sql);
 
-    if ($resultado){
-        echo "Se ha registrado con éxito el nuevo usuario.";
+    if($resultado){
+        echo '<script>alert("El usuario se ha registrado con éxito."); window.location.href="../vista/usuarios/usuarios__consultar.php"</script>';
     }
     else{
-        echo "Problemas al registrar el nuevo usuario.";
+        echo '<script>alert("Error al registrar el usuario en el sistema."); window.location.href="../vista/usuarios/usuarios__consultar.php"</script>';
     }
 
 ?>
