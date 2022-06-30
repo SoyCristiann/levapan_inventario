@@ -31,7 +31,7 @@
 
         <!--Formulario de registro de usuarios-->
 
-        <form method="post" action="../../controlador/registrar_usuarios.php">
+        <form method="post" action="../../modelo/validador.php?accion=registrarUsuario">
 
             <div class="nombre_item">
                 <label for="id_usuario" class="form_reg_productos">Ingrese el ID del usuario:</label>

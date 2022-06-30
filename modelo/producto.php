@@ -38,20 +38,6 @@
         public function getTipo(){
             return $this -> tipo;
         }
-
-    // Getters
-
-        public function setId($nuevoId){
-            $this -> id = $nuevoId;
-        }
-
-        public function setNombre($nuevoNombre){
-            $this -> nombre = $nuevoNombre;
-        }
-
-        public function setTipo($nuevoTipo){
-            $this -> tipo = $nuevoTipo;
-        }
     
         public function getFechaVencimiento(){
             return $this -> fechaVencimiento;
@@ -101,5 +87,17 @@
 
         public function setCantidad($nuevaCantidad){
             $this -> cantidad = $nuevaCantidad;
+        }
+
+        public function setId($nuevoId){
+            $this -> id = $nuevoId;
+        }
+
+        public function setNombre($nuevoNombre){
+            $this -> nombre = $nuevoNombre;
+        }
+
+        public function setTipo($nuevoTipo){
+            $this -> tipo = $nuevoTipo;
         }
     }

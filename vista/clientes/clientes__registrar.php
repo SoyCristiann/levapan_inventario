@@ -28,7 +28,7 @@
             <h2>Registrar nuevo cliente</h2>
         </div>
 
-        <form method="post" action="../../controlador/registrar_clientes.php">
+        <form method="post" action="../../modelo/validador.php?accion=registrarCliente">
             <div class="nombre_item">
                 <label for="id_cliente" class="form_reg_productos">Igrese el ID del cliente:</label>
             </div>

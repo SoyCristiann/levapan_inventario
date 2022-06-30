@@ -36,6 +36,7 @@
             <h2>Consultar o actualizar clientes</h2>
         </div>
 
+        <!--Formulario para consultar clientes-->
         <form class="consultar_cliente" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
             
             <div class="nombre_item">
@@ -48,7 +49,7 @@
             <input type="submit" value="Búscar" class="boton_submit">
         </form>
 
-        <form name="formularioEliminar" method="post" >
+        <form name="formularioConsultarCliente" method="post" >
         <table class="tablaConsulta">
             <tr>
                 <th class="itemTabla">Identificación del cliente</th>
@@ -78,8 +79,8 @@
                     <td class="itemTabla"><?php echo $clientes -> tbl_telefono?></td>
                     <td class="itemTabla"><?php echo $clientes -> tbl_email?></td>
                     
-                    <td class="itemTabla"><input type="submit" value="Editar"></td>
-                    <td class="itemTabla"><input type="submit" value="Eliminar"></td>
+                    <td class="itemTabla"><a class="boton" href="../../modelo/validador.php?id=<?php echo $clientes -> id_cliente?>">Editar</a></td>
+                    <td class="itemTabla"><a class="boton botonEliminar" href="../../modelo/validador.php?idCliente=<?php echo $clientes -> id_cliente?>&accion=eliminarCliente">Eliminar</a></td>
                 </tr>
             <?php
                 }
@@ -89,7 +90,7 @@
 
         
     </main>
-
+    <script src="../../js/confirmacion.js"></script>
     <footer class="pie_pagina">
         <p class="copyright">&copy Copyright Cristian Navarro</p>
         <p>Análisis y Desarrollo de Sistemas de Información</p>

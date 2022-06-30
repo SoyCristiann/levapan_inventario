@@ -30,7 +30,7 @@ $resultado = $objConexion -> query($sql);
 
         
         <!--Formulario de registro de producto-->
-        <form method="post" action="../../controlador/registrar_producto.php">
+        <form method="post" action="../../modelo/validador.php?accion=registrarProducto">
             
             <div class="nombre_item">
                 <label for="id_producto" class="form_reg_productos">ID o SKU del producto:</label>

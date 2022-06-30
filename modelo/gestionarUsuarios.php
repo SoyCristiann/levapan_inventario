@@ -3,9 +3,32 @@
 
     class gestionarUsuarios{
 
-        //Pendiente
-        public function registrarUsuarios(){
+        
+        public function registrarUsuarios(usuario $usuario){
+            $objConexion = conectarse();
 
+            $id_usuario = $usuario -> getId();
+            $nombre_usuario = $usuario -> getNombre();
+            $fecha_nac = $usuario -> getFechaNacimiento();
+            $tel_usuario = $usuario -> getTelefono();
+            $email_usuario = $usuario -> getEmail();
+            $dir_calle_usuario = $usuario -> getCalle();
+            $dir_num_usuario = $usuario -> getNumeroCasa();
+            $ciudad_usuario = $usuario -> getCiudad();
+            $seleccion_usuario = $usuario -> getTipo();
+
+
+            // Variable que guarda la instruccion sql.
+            $sql = "CALL registrar_usuario('$id_usuario', '$nombre_usuario', '$fecha_nac', '$ciudad_usuario', '$dir_calle_usuario', '$dir_num_usuario', '$seleccion_usuario', '$email_usuario', '$tel_usuario')";
+
+            $resultado = $objConexion -> query($sql);
+
+            if($resultado){
+                echo '<script>alert("El usuario se ha registrado con éxito."); window.location.href="../vista/usuarios/usuarios__consultar.php"</script>';
+            }
+            else{
+                echo '<script>alert("Error al registrar el usuario en el sistema."); window.location.href="../vista/usuarios/usuarios__consultar.php"</script>';
+            }
         }
 
         public function actualizarUsuarios(usuario $usuario){
