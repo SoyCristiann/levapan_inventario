@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="vista/reset.css">
-    <link rel="stylesheet" href="vista/estilo.css">
-    <title>Home Levapan Almacen</title>
+    <link rel="stylesheet" href="vista/css/reset.css">
+    <link rel="stylesheet" href="vista/css/estilo.css">
+    <title>Login Levapan</title>
 </head>
 <body>
     <header class="encabezado">
@@ -16,39 +16,34 @@
     </header>
 
     <main>
+
         <div class="titulo_secundario">
-            <h2>Bienvenido</h2>
+            <h2>Inicio de Sesión</h2>
         </div>
 
-        <div class="acciones">
-            <p>¿Qué quieres hacer?</p>
-            <ul class="lista-items">
+        <!--Formulario de actualización de usuarios-->
 
-                <a href="vista/inventario/inventario__consultar.php">
-                    <li class="items">
-                    <img src="vista/imagenes/iconos/consultar_inventario.svg">
-                    <p>Consultar inventario</p>
-                </li></a>           
+        <form method="post" action="../../modelo/validador.php?accion=inicioSesion">
 
-                <a href="vista/clientes/clientes__index.html"><li class="items">
-                    <img src="vista/imagenes/iconos/administrar_clientes.svg">
-                    <p>Administrar Clientes</p>
-                </li></a>
+            <div class="nombre_item">
+                <label for="id_usuario" class="form_reg_productos">Usuario:</label>
+            </div>
+            <div class="ingresar_datos">
+                <input type="text" id="id_usuario" name="id_usuario"  class="lista_busqueda" required placeholder="Usuario">
+            </div>
 
-                <a href="vista/productos/productos__index.html">
-                    <li class="items">
-                        <img src="vista/imagenes/iconos/gestion_productos.png">
-                        <p>Gestionar productos</p>
-                </li></a>
+            <div class="nombre_item">
+                <label for="nombre_usuario" class="form_reg_productos">Contraseña:</label>
+            </div>
+            <div class="ingresar_datos">
+                <input type="password" id="nombre_usuario" name="nombre_usuario"  class="lista_busqueda" required placeholder="Contraseña">
+            </div>
 
-                <a href="vista/usuarios/usuarios__index.html">
-                    <li class="items">
-                    <img src="vista/imagenes/iconos/gestion_usuarios.svg">
-                    <p>Gestionar usuarios</p>
-                </li></a>
-               
-            </ul>
-        </div>
+            <input type="submit" value="Iniciar Sesión" class="boton_submit">
+
+        </form>
+
+        
     </main>
 
     <footer class="pie_pagina">

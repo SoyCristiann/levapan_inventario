@@ -34,7 +34,7 @@
         }
 
         if(($_GET["accion"] == "actualizarCliente")){
-
+            $controlador -> actualizarClientes($_POST["id_cliente"], $_POST["nombre_cliente"], $_POST["direccion_calle_cliente"], $_POST["direccion_numero_cliente"], $_POST["ciudad_cliente"], $_POST["telefono_cliente"], $_POST["email_cliente"], $_POST["seleccion_cliente"]);
         }
 
         if(($_GET["accion"] == "eliminarCliente")){

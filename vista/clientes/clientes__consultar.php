@@ -19,14 +19,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="../estilo.css">
-    <title>Editar Clientes Levapan</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <title>Consultar Clientes Levapan</title>
 </head>
 <body>
     <header class="encabezado">
         <div class="container">
-            <h1><a href="../../index.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
+            <h1><a href="../inicio.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
             <h1 class="titulo_principal">Sistema de gestión de inventario</h1>
         </div>
     </header>
@@ -79,7 +79,7 @@
                     <td class="itemTabla"><?php echo $clientes -> tbl_telefono?></td>
                     <td class="itemTabla"><?php echo $clientes -> tbl_email?></td>
                     
-                    <td class="itemTabla"><a class="boton" href="../../modelo/validador.php?id=<?php echo $clientes -> id_cliente?>">Editar</a></td>
+                    <td class="itemTabla"><a class="boton" href="clientes__actualizar.php?id=<?php echo $clientes -> id_cliente?>">Editar</a></td>
                     <td class="itemTabla"><a class="boton botonEliminar" href="../../modelo/validador.php?idCliente=<?php echo $clientes -> id_cliente?>&accion=eliminarCliente">Eliminar</a></td>
                 </tr>
             <?php

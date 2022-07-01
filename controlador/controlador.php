@@ -7,9 +7,9 @@
     include '../modelo/gestionarClientes.php';
 
     class controlador {
-        
+        //Muy importante el orden de recibir los parametros. Deben recibirse en estricto orden declarados en la clase.
+
         public function registrarProductos($id, $nombre, $tipo, $fechaVencimiento, $lote, $fechaRecibido, $peso,$ubicacion, $cantidad){
-            //Los parametros se deben recibir en estricto orden declarado en la clase.
             $nuevoProducto = new producto($id, $nombre, $tipo, $fechaVencimiento, $lote, $fechaRecibido, $peso,$ubicacion, $cantidad);
             $gestorProducto = new gestionarProductos();
             $gestorProducto -> registrarProductos($nuevoProducto);
@@ -48,6 +48,12 @@
             $nuevoCliente = new cliente($id, $nombre, $calle, $numeroCasa, $ciudad, $telefono, $email, $tipo);
             $gestorCliente = new gestionarClientes();
             $gestorCliente -> registrarClientes($nuevoCliente);
+        }
+
+        public function actualizarClientes($id, $nombre, $calle, $numeroCasa, $ciudad, $telefono, $email, $tipo){
+            $nuevoCliente = new cliente($id, $nombre, $calle, $numeroCasa, $ciudad, $telefono, $email, $tipo);
+            $gestorCliente = new gestionarClientes();
+            $gestorCliente -> actualizarClientes($nuevoCliente);;
         }
 
         public function eliminarClientes($id){
