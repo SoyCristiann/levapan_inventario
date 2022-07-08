@@ -2,12 +2,20 @@
     include '../modelo/producto.php';
     include '../modelo/usuario.php';
     include '../modelo/cliente.php';
+    include '../modelo/sesion.php';
+    require '../modelo/gestionarSesion.php';
     include '../modelo/gestionarProductos.php';
     include '../modelo/gestionarUsuarios.php';
     include '../modelo/gestionarClientes.php';
 
     class controlador {
         //Muy importante el orden de recibir los parametros. Deben recibirse en estricto orden declarados en la clase.
+
+        public function iniciarSesion($id, $password){
+            $nuevaSesion = new sesion($id, $password);
+            $nuevoGestorSesion = new gestionarSesion();
+            $nuevoGestorSesion -> iniciarSesion($nuevaSesion);
+        }
 
         public function registrarProductos($id, $nombre, $tipo, $fechaVencimiento, $lote, $fechaRecibido, $peso,$ubicacion, $cantidad){
             $nuevoProducto = new producto($id, $nombre, $tipo, $fechaVencimiento, $lote, $fechaRecibido, $peso,$ubicacion, $cantidad);
@@ -26,15 +34,15 @@
             $gestorProducto -> eliminarProductos($id);
         }
 
-        public function registrarUsuarios($id, $nombre, $fechaNacimiento, $tipo, $direccionCalle, $direccionNumero,  $ciudad, $telefono, $email){
-            //Los parametros se deben recibir en estricto orden declarado en la clase.
-            $nuevoUsuario = new usuario($id, $nombre, $fechaNacimiento, $tipo, $direccionCalle, $direccionNumero,  $ciudad, $telefono, $email);
+        public function registrarUsuarios($id, $password, $nombre, $fechaNacimiento, $tipo, $direccionCalle, $direccionNumero,  $ciudad, $telefono, $email){
+            $nuevoUsuario = new usuario($id, $password, $nombre, $fechaNacimiento, $tipo, $direccionCalle, $direccionNumero, $ciudad, $telefono, $email);
             $gestorUsuario = new gestionarUsuarios();
             $gestorUsuario -> registrarUsuarios($nuevoUsuario);
         }
 
-        public function actualizarUsuarios($id, $nombre, $fechaNacimiento, $tipo, $direccionCalle, $direccionNumero, $ciudad, $telefono, $email){
-            $nuevoUsuario = new usuario($id, $nombre, $fechaNacimiento, $tipo, $direccionCalle, $direccionNumero, $ciudad, $telefono, $email);
+        public function actualizarUsuarios($id, $password, $nombre, $fechaNacimiento, $tipo, $direccionCalle, $direccionNumero, $ciudad, $telefono, $email){
+            $nuevoUsuario = new usuario($id, $password, $nombre, $fechaNacimiento, $tipo, $direccionCalle, $direccionNumero, $ciudad, $telefono, $email);
+            print_r($nuevoUsuario);
             $gestorUsuario = new gestionarUsuarios();
             $gestorUsuario -> actualizarUsuarios($nuevoUsuario);
         }

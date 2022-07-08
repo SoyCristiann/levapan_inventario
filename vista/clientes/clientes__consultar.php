@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if (!isset($_SESSION['user'])){
+        header("location:../../index.php?x=2");
+    }
     require '../../controlador/conexion.php';
     extract ($_REQUEST);
     $objConexion = conectarse();
@@ -25,8 +29,11 @@
 </head>
 <body>
     <header class="encabezado">
+        <div class="cerrar_sesion">
+            <a href="../../modelo/cerrarsesion.php">Cerrar Sesion</a>
+        </div>
         <div class="container">
-            <h1><a href="../inicio.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
+            <h1><a href="../inicio.php"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
             <h1 class="titulo_principal">Sistema de gestión de inventario</h1>
         </div>
     </header>

@@ -1,3 +1,9 @@
+<?php
+    error_reporting(E_ERROR | E_WARNING | E_PARSE);
+    $x = $_REQUEST['x'];
+    
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +16,7 @@
 <body>
     <header class="encabezado">
         <div class="container">
-            <h1><a href="#"><img class="logo" src="vista/imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
+            <h1><a href="index.php"><img class="logo" src="vista/imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
             <h1 class="titulo_principal">Sistema de gestión de inventario</h1>
         </div>
     </header>
@@ -23,29 +29,40 @@
 
         <!--Formulario de actualización de usuarios-->
 
-        <form method="post" action="../../modelo/validador.php?accion=inicioSesion">
+        <form method="post" action="modelo/validador.php?accion=iniciarSesion">
 
             <div class="nombre_item">
                 <label for="id_usuario" class="form_reg_productos">Usuario:</label>
             </div>
             <div class="ingresar_datos">
-                <input type="text" id="id_usuario" name="id_usuario"  class="lista_busqueda" required placeholder="Usuario">
+                <input type="text" id="id_usuario" name="id_usuario"  class="lista_busqueda" required placeholder="Número de documento">
             </div>
 
             <div class="nombre_item">
                 <label for="nombre_usuario" class="form_reg_productos">Contraseña:</label>
             </div>
             <div class="ingresar_datos">
-                <input type="password" id="nombre_usuario" name="nombre_usuario"  class="lista_busqueda" required placeholder="Contraseña">
+                <input type="password" id="usuario_password" name="usuario_password"  class="lista_busqueda" required placeholder="Contraseña">
             </div>
 
             <input type="submit" value="Iniciar Sesión" class="boton_submit">
-
         </form>
+        <?php
+            switch($x){
+                case 1:
+                    echo '<script type="text/javascript">alert("El usuario o la constraseña no son correctos.")</script>';
+                    break;
+                
+                case 2:
+                    echo '<script>alert("Debe iniciar sesión para acceder al sistema.")</script>';
+                    break;
 
-        
+                case 3:
+                    echo '<script>alert("Sesión finalizada.")</script>';
+                    break;
+            }
+        ?>
     </main>
-
     <footer class="pie_pagina">
         <p class="copyright">&copy Copyright Cristian Navarro</p>
         <p>Análisis y Desarrollo de Sistemas de Información</p>

@@ -1,6 +1,8 @@
-<!--Página que recoge la información del usuario y permite la actualización de sus datos.-->
-
 <?php
+    session_start();
+    if (!isset($_SESSION['user'])){
+        header("location:../../index.php?x=2");
+    }
     require '../../controlador/conexion.php';
 
     $objConexion = conectarse();
@@ -29,8 +31,11 @@
 </head>
 <body>
     <header class="encabezado">
+        <div class="cerrar_sesion">
+            <a href="../../modelo/cerrarsesion.php">Cerrar Sesion</a>
+        </div>
         <div class="container">
-            <h1><a href="../inicio.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
+            <h1><a href="../inicio.php"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
             <h1 class="titulo_principal">Sistema de gestión de inventario</h1>
         </div>
     </header>
@@ -50,6 +55,13 @@
             </div>
             <div class="ingresar_datos">
                 <input type="text" id="id_usuario" name="id_usuario"  class="lista_busqueda" required placeholder="Número de documento" readonly value="<?php echo $usuario -> id_usuario?>" >
+            </div>
+
+            <div class="nombre_item">
+                <label for="id_usuario" class="form_reg_productos">Contraseña:</label>
+            </div>
+            <div class="ingresar_datos">
+                <input type="password" id="password_usuario" name="password_usuario" class="lista_busqueda" required placeholder="Contraseña">
             </div>
 
             <div class="nombre_item">

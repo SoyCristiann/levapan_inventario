@@ -1,8 +1,12 @@
 <?php
-require '../../controlador/conexion.php';
-$objConexion = conectarse();
-$sql = "SELECT id_tipo, tip_nombre FROM tbl_prod_tipos";
-$resultado = $objConexion -> query($sql);
+    session_start();
+    if (!isset($_SESSION['user'])){
+        header("location:../../index.php?x=2");
+    }
+    require '../../controlador/conexion.php';
+    $objConexion = conectarse();
+    $sql = "SELECT id_tipo, tip_nombre FROM tbl_prod_tipos";
+    $resultado = $objConexion -> query($sql);
 ?>
 <!---------------------------------------------------------------------------------------------------------------------->
 
@@ -17,8 +21,11 @@ $resultado = $objConexion -> query($sql);
 </head>
 <body>
     <header class="encabezado">
+        <div class="cerrar_sesion">
+            <a href="../../modelo/cerrarsesion.php">Cerrar Sesion</a>
+        </div>
         <div class="container">
-            <h1><a href="../inicio.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
+            <h1><a href="../inicio.php"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
             <h1 class="titulo_principal">Sistema de gestión de inventario</h1>
         </div>
     </header>

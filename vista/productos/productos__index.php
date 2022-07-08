@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['user'])){
+        header("location:../../index.php?x=2");
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,35 +11,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/estilo.css">
-    <title>Gestionar Clientes Levapan</title>
+    <title>Gestionar Productos Levapan</title>
 </head>
 <body>
     <header class="encabezado">
+        <div class="cerrar_sesion">
+            <a href="../../modelo/cerrarsesion.php">Cerrar Sesion</a>
+        </div>
         <div class="container">
-            <h1><a href="../inicio.html"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
+            <h1><a href="../inicio.php"><img class="logo" src="../imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
             <h1 class="titulo_principal">Sistema de gestión de inventario</h1>
         </div>
     </header>
 
     <main>
         <div class="titulo_secundario">
-            <h2>Administrador de clientes</h2>
+            <h2>Administrador De Productos</h2>
         </div>
 
         <div class="acciones">
             <p>¿Qué quieres hacer?</p>
             <ul class="lista-items">
 
-                <a href="clientes__registrar.php"><li class="items">
-                    <img src="../imagenes/iconos/consultar_clientes.svg">
-                    <p>Registrar Nuevo Cliente</p>
-                </li></a>
-
-                <a href="clientes__consultar.php">
+                <a href="productos__registrar.php">
                     <li class="items">
-                    <img src="../imagenes/iconos/registrar_clientes.svg">
-                    <p>Consultar o actualizar clientes</p>
-                </li></a>           
+                    <img src="../imagenes/iconos/consultar_clientes.svg">
+                    <p>Registrar nuevo producto</p>
+                </li></a>
                 
             </ul>
         </div>

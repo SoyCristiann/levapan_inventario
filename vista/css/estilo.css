@@ -22,6 +22,25 @@
     transform: scale(1.1);
 }
 
+.cerrar_sesion{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cerrar_sesion a{
+    text-decoration: none;
+    margin: 1em;
+    color: #000000;
+    font-weight: bold;
+    transition: 400ms;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cerrar_sesion a:hover{
+    color: #cc7766;
+    font-size: 20px;
+}
+
 .titulo_principal{
     font-size: 55px;
     text-align: center;

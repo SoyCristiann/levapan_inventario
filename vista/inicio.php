@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['user'])){
+        header("location:../index.php?x=2");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,8 +16,11 @@
 </head>
 <body>
     <header class="encabezado">
+        <div class="cerrar_sesion">
+            <a href="../modelo/cerrarSesion.php" class="cerrarSesion">Cerrar Sesion</a>
+        </div>
         <div class="container">
-            <h1><a href="#"><img class="logo" src="imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
+            <h1><a href="inicio.php"><img class="logo" src="imagenes/levapan.png" alt="Logo empresa Levapan"></h1></a>
             <h1 class="titulo_principal">Sistema de gestión de inventario</h1>
         </div>
     </header>
@@ -30,18 +40,18 @@
                     <p>Consultar inventario</p>
                 </li></a>           
 
-                <a href="clientes/clientes__index.html"><li class="items">
+                <a href="clientes/clientes__index.php"><li class="items">
                     <img src="imagenes/iconos/administrar_clientes.svg">
                     <p>Administrar Clientes</p>
                 </li></a>
 
-                <a href="productos/productos__index.html">
+                <a href="productos/productos__index.php">
                     <li class="items">
                         <img src="imagenes/iconos/gestion_productos.png">
                         <p>Gestionar productos</p>
                 </li></a>
 
-                <a href="usuarios/usuarios__index.html">
+                <a href="usuarios/usuarios__index.php">
                     <li class="items">
                     <img src="imagenes/iconos/gestion_usuarios.svg">
                     <p>Gestionar usuarios</p>

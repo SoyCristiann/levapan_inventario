@@ -3,6 +3,7 @@
     class usuario{
         
         private $id;
+        private $password;
         private $nombre;
         private $fechaNacimiento;
         private $tipo;
@@ -12,8 +13,9 @@
         private $telefono;
         private $email;
 
-        public function __construct($id, $nombre, $fechaNacimiento, $tipo, $calle, $numeroCasa, $ciudad, $telefono, $email){
+        public function __construct($id, $password, $nombre, $fechaNacimiento, $tipo, $calle, $numeroCasa, $ciudad, $telefono, $email){
             $this -> id = $id;
+            $this -> password = $password;
             $this -> nombre = $nombre;
             $this -> fechaNacimiento = $fechaNacimiento;
             $this -> tipo = $tipo;
@@ -27,6 +29,10 @@
     // Getters
         public function getId(){
             return $this -> id;
+        }
+
+        public function getPassword(){
+            return $this -> password;
         }
 
         public function getNombre(){
@@ -64,6 +70,10 @@
     // Setters
         public function setId($id){
             $this -> id = $id;
+        }
+
+        public function setPassword($password){
+            $this -> password = $password;
         }
 
         public function setNombre($nombre){
